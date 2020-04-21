@@ -1,15 +1,18 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<form action="" method="POST">
 <div class="card mb-3">
     <h2 class="card-header bg-dark text-white">{{ post.title }}</h2>
     <div class="card-body">
       <p>{{ post.created_at }}, {{ post.category }}</p>
       {{ post.text | linebreaksbr | urlize }}
     </div>
+    <p>データを削除します。</p>
     <div class="text-right mr-5 mb-2">
-      <a href="{% url 'blog:update' post.pk %}" class="btn btn-primary">更新</a>
-      <a href="{% url 'blog:delete' post.pk %}" class="btn btn-primary">削除</a>
+      <button type="submit" class="btn btn-primary">削除</button>
+      {% csrf_token %}
     </div>
 </div>
+</form>
 {% endblock %}

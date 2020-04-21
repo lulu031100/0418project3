@@ -48,3 +48,8 @@ class UpdateView(generic.UpdateView):
     model = Post
     form_class = PostCreateForm
     success_url = reverse_lazy('blog:index')
+
+class DeleteView(generic.DeleteView):
+    template_name = 'blog/post_confirm_delete.html'
+    model = Post
+    success_url = reverse_lazy('blog:index')
