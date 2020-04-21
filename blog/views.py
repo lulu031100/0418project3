@@ -42,3 +42,9 @@ class AddView(generic.CreateView):
     model = Post
     form_class = PostCreateForm
     success_url = reverse_lazy('blog:index')
+    
+class UpdateView(generic.UpdateView):
+    template_name = 'blog/post_form.html'
+    model = Post
+    form_class = PostCreateForm
+    success_url = reverse_lazy('blog:index')
