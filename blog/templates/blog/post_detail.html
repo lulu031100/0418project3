@@ -7,9 +7,8 @@
       <p>{{ post.created_at }}, {{ post.category }}</p>
       {{ post.text | linebreaksbr | urlize }}
     </div>
-    <div>
-     <!-- <a href="{% url 'blog:update' blog.pk %}">更新</a></td> -->
-    </div>
+    <div class="text-right mr-5 mb-2">
+      <a href="{% url 'blog:update' post.pk %}" class="btn btn-primary">更新</a>
     </div>
 </div>
 {% endblock %}
