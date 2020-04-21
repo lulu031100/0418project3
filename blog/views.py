@@ -1,6 +1,9 @@
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
+
 from django.views import generic
+from django.urls import reverse_lazy
+from .forms import PostCreateForm
 from .models import Post, Category
 
 class IndexView(generic.ListView):
@@ -33,3 +36,9 @@ class CategoryView(generic.ListView):
 class DetailView(generic.DetailView):
     template_name = 'blog/post_detail.html'
     model = Post
+    
+class AddView(generic.CreateView):
+    template_name = 'blog/post_form.html'
+    model = Post
+    form_class = PostCreateForm
+    success_url = reverse_lazy('blog:index')

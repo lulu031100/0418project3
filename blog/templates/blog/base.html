@@ -28,7 +28,7 @@
           </li>
           {% endif %}
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link" href="{% url 'blog:add' %}">ブログの追加</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'blog:index' %}">
@@ -38,8 +38,8 @@
       </div>
     </nav>
     <div class="jumbotron">
-      <h1 class="display-3">ブログタイトル</h1>
-      <p class="lead">中延に関するブログ</p>
+      <h1 class="display-3">中延生活ブログ</h1>
+      <p class="lead">このブログは中延周辺の生活に役立つ情報を載せています</p>
       <hr class="my-2">
       </p>
     </div>
