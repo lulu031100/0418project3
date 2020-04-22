@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+app_name = 'blog'
 class Category(models.Model):
     name = models.CharField('カテゴリー名', max_length=200)
     created_at = models.DateTimeField('作成日',default=timezone.now)
