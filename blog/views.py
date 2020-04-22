@@ -28,8 +28,8 @@ class CategoryView(generic.ListView):
     def get_queryset(self):
 
         category = get_object_or_404(Category, pk=self.kwargs['pk'])
-        queryset = Post.objects.order_by('-created_at').filter(category=category)
-
+        # queryset = Post.objects.order_by('created_at').filter(category=category)
+        queryset = Post.objects.order_by('created_at').filter(category=category)
         return queryset
 
 
@@ -52,4 +52,4 @@ class UpdateView(generic.UpdateView):
 class DeleteView(generic.DeleteView):
     template_name = 'blog/post_confirm_delete.html'
     model = Post
-    success_url = reverse_lazy('blog:index')
+    success_url = reverse_lazy('post:index')

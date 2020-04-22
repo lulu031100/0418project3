@@ -26,10 +26,10 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
           </li>
-          {% endif %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'blog:add' %}">ブログの追加</a>
           </li>
+          {% endif %}
         </ul>
         <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'blog:index' %}">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="keyword">
@@ -38,7 +38,7 @@
       </div>
     </nav>
     <div class="jumbotron">
-      <h1 class="display-3">中延生活ブログ</h1>
+      <h1 class="display-4">中延生活ブログ</h1>
       <p class="lead">このブログは中延周辺の生活に役立つ情報を載せています</p>
       <hr class="my-2">
       </p>
